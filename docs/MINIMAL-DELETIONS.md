@@ -2,30 +2,29 @@
 
 This list is intentionally conservative: remove only what is now clearly redundant after the homepage rewrite.
 
-## Phase 1 (safe deletions now)
+## Phase 1 (completed in cleanup)
+
+Deleted:
 
 1. `components/landing/TestimonialSection.tsx`
-   - No longer imported by `app/page.tsx`.
-   - Large legacy content and animation logic.
+2. `data/caseStudies.ts`
+3. `components/custom/ImageCarousel.tsx`
+4. `data/blogData.ts`
 
-2. `data/caseStudies.ts` (optional in same PR if you do not plan to reuse)
-   - Home no longer depends on this dataset.
-   - Keep only if you plan to rebuild case studies later.
-
-3. Legacy carousel/image helpers only if `data/caseStudies.ts` is removed:
-   - `components/custom/ImageCarousel.tsx`
-   - Any related unused imports/usages surfaced by `rg "ImageCarousel|caseStudies"`.
+These files were no longer referenced after homepage and blog-list rewrites.
 
 ## Phase 2 (next cleanup PR)
 
-1. Simplify `/about` page to match new consulting positioning:
-   - `app/about/page.tsx` currently contains old "Ionio" copy and remote placeholder imagery.
+1. Replace remaining template-era branding strings in metadata and social links:
+   - `lib/metadata.ts`
+   - `components/custom/Navbar.tsx`
 
-2. Simplify `/blog` listing:
-   - Migrate `app/blog/page.tsx` to read from `content/*.mdx` (same source as `/blog/[slug]`).
-   - Remove duplicated static in-file blog array.
+2. Optional blog detail simplification:
+   - `components/custom/AnimatedHeroSection.tsx`
+   - `components/custom/AnimatedMainContent.tsx`
+   - Keep if you want motion-heavy article pages.
 
-3. Replace remote template images in nav/footer/about/blog where not needed.
+3. Add more MDX posts to support richer preview demonstrations.
 
 ## Why this is "minimal"
 

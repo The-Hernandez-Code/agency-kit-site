@@ -19,12 +19,12 @@ This document maps the active routes and their primary components so PR reviewer
 ### `/about`
 - **Layout**: `app/about/layout.tsx`
 - **Page**: `app/about/page.tsx`
-- **Notes**: currently still legacy "agency" style content and heavy GSAP animation.
+- **Notes**: now simplified to a concise consulting positioning + service model page.
 
 ### `/blog`
 - **Layout**: `app/blog/layout.tsx`
 - **Page**: `app/blog/page.tsx`
-- **Notes**: uses in-file static blog list.
+- **Notes**: now reads from `content/*.mdx` (same source as `/blog/[slug]`).
 
 ### `/blog/[slug]`
 - **Page**: `app/blog/[slug]/page.tsx`
@@ -37,7 +37,7 @@ This document maps the active routes and their primary components so PR reviewer
 
 - `lib/contact.ts` - env-driven contact links used across hero/navbar/footer/contact section.
 - `lib/metadata.ts` - site and route metadata config (currently brand text is still from original template and should be updated in a follow-up PR).
-- `data/caseStudies.ts` - legacy dataset from original template (no longer used by homepage after rewrite).
+- `content/*.mdx` - blog source files used for listing and detail routes.
 
 ## Key environment variables
 
