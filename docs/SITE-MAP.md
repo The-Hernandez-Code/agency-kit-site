@@ -7,11 +7,12 @@ This document maps the active routes and their primary components so PR reviewer
 ### `/` (home)
 - **Entry**: `app/page.tsx`
 - **Sections in order**:
-  - `components/landing/HeroSection.tsx`
-  - `components/landing/CaseStudiesSection.tsx` (now "Services")
+  - `components/landing/HeroSection.tsx` (full-bleed hero; matches agency-kit layout)
+  - `components/landing/CaseStudiesSection.tsx`
   - `components/landing/ProcessSection.tsx`
-  - `components/landing/FAQSection.tsx`
-  - `components/landing/ContactSection.tsx`
+  - `components/landing/TestimonialSection.tsx`
+  - `components/landing/ContactSection.tsx` (anchor `id="work-with-us"` for footer CTA)
+- **Note**: `components/landing/FAQSection.tsx` exists but is not mounted on the home page (agency-kit parity).
 - **Global chrome** (via `app/layout.tsx`):
   - `components/custom/Navbar.tsx`
   - `components/custom/Footer.tsx`
@@ -37,7 +38,7 @@ This document maps the active routes and their primary components so PR reviewer
 
 - `lib/contact.ts` - env-driven contact links used across hero/navbar/footer/contact section.
 - `lib/metadata.ts` - site and route metadata config (currently brand text is still from original template and should be updated in a follow-up PR).
-- `data/caseStudies.ts` - legacy dataset from original template (no longer used by homepage after rewrite).
+- `data/caseStudies.ts` - case study and testimonial content used by hero marquee, case studies, testimonials, and contact panel.
 
 ## Key environment variables
 
