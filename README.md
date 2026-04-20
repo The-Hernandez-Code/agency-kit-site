@@ -192,12 +192,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 - 📧 **Email**: Use the contact options configured in your deployment (see `lib/contact.ts` and `NEXT_PUBLIC_*` variables in your environment).
-- 🐛 **Issues**: Open an issue in your fork or upstream repository on GitHub.
-- 💬 **Discussions**: Use GitHub Discussions on the repository where you host this project.
+- 🐛 **Issues**: Track bugs and requests in whatever issue tracker you use for the project.
+- 💬 **Discussions**: Use your team’s preferred channel for design and roadmap conversations.
 
 ## 🌟 Show Your Support
 
-If you found this template helpful, please give it a ⭐ on GitHub!
+If you found this template helpful, share it with someone who might benefit.
 
 ---
 
