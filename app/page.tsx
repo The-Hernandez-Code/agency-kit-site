@@ -1,8 +1,8 @@
 import CaseStudiesSection from "@/components/landing/CaseStudiesSection";
 import ContactSection from "@/components/landing/ContactSection";
+import FAQSection from "@/components/landing/FAQSection";
 import HeroSection from "@/components/landing/HeroSection";
 import ProcessSection from "@/components/landing/ProcessSection";
-import TestimonialSection from "@/components/landing/TestimonialSection";
 import { generatePageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 
@@ -15,7 +15,7 @@ export default function Home() {
         <HeroSection />
         <CaseStudiesSection />
         <ProcessSection />
-        <TestimonialSection />
+        <FAQSection />
         <ContactSection />
       </div>
     </main>
