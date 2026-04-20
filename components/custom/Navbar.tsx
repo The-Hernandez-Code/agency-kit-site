@@ -1,5 +1,6 @@
 "use client";
 
+import { contactLinks } from "@/lib/contact";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -26,14 +27,14 @@ function Navbar() {
       description: "Return to homepage",
     },
     {
-      name: "About",
+      name: "Services",
       href: "/about",
-      description: "Learn more about our company",
+      description: "Learn how I deliver Power Platform and Copilot engagements",
     },
     {
       name: "Blog",
       href: "/blog",
-      description: "Read our latest AI insights and research",
+      description: "Read implementation notes and practical automation playbooks",
     }
   ];
 
@@ -197,19 +198,15 @@ function Navbar() {
               <Link
                 href="/"
                 className="focus:ring-ring flex items-center gap-2 rounded-md transition-opacity hover:opacity-80 focus:ring-2 focus:ring-offset-2 focus:outline-none"
-                aria-label="Ionio - Return to homepage"
+                aria-label="Consulting Studio - Return to homepage"
                 aria-describedby="logo-description"
               >
-                <img
-                  src="https://cdn.prod.website-files.com/62528d398a42424ab6390ee1/62528d398a42424d6e390f57_horizontal-logo-transperant.png"
-                  alt="Ionio Logo"
-                  className="h-8 w-auto"
-                  width="120"
-                  height="32"
-                  aria-hidden="true"
-                />
+                <span className="rounded-md bg-slate-900 px-2 py-1 text-xs font-semibold tracking-wide text-white">
+                  Studio
+                </span>
+                <span className="text-sm font-semibold text-slate-900">Your Name Consulting</span>
                 <span id="logo-description" className="sr-only">
-                  Ionio - Leading digital solutions provider
+                  Personal consulting studio for Power Platform and Copilot engagements
                 </span>
               </Link>
             </div>
@@ -248,11 +245,11 @@ function Navbar() {
             <div className="flex items-center gap-3">
               {/* GitHub Icon */}
               <Link
-                href="https://github.com/pinak3748"
+                href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="focus:ring-ring flex items-center justify-center rounded-md p-2 transition-colors hover:bg-accent"
-                aria-label="Visit our GitHub repository"
+                aria-label="Visit GitHub profile"
               >
                 <Github className="h-5 w-5 text-primary" />
               </Link>
@@ -261,8 +258,11 @@ function Navbar() {
                 size={"sm"}
                 className="text-sm"
                 aria-label="Contact us to start working together"
+                asChild
               >
-                Work with us
+                <a href={contactLinks.bookingUrl} target="_blank" rel="noopener noreferrer">
+                  Book a discovery call
+                </a>
               </Button>
             </div>
 
@@ -338,11 +338,11 @@ function Navbar() {
                   <div className="border-t pt-4 space-y-3">
                     {/* GitHub Link */}
                     <Link
-                      href="https://github.com/ionio"
+                      href="https://github.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none"
-                      aria-label="Visit our GitHub repository"
+                      aria-label="Visit GitHub profile"
                       onClick={closeMenu}
                     >
                       <Github className="h-5 w-5 text-primary" />
@@ -353,8 +353,11 @@ function Navbar() {
                       className="w-full"
                       aria-label="Contact us to start working together"
                       onClick={closeMenu}
+                      asChild
                     >
-                      Work with us
+                      <a href={contactLinks.bookingUrl} target="_blank" rel="noopener noreferrer">
+                        Book a discovery call
+                      </a>
                     </Button>
                   </div>
                 </div>
