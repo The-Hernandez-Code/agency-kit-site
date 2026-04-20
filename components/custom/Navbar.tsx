@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,15 +27,15 @@ function Navbar() {
       description: "Return to homepage",
     },
     {
-      name: "Services",
+      name: "About",
       href: "/about",
-      description: "Learn how I deliver Power Platform and Copilot engagements",
+      description: "Learn more about our company",
     },
     {
       name: "Blog",
       href: "/blog",
-      description: "Read implementation notes and practical automation playbooks",
-    }
+      description: "Read our latest AI insights and research",
+    },
   ];
 
   const toggleMenu = () => {
@@ -79,7 +79,9 @@ function Navbar() {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape" && isMenuOpen) {
-        closeMenu();
+        setIsMenuOpen(false);
+        setActiveIndex(-1);
+        buttonRef.current?.focus();
       }
     };
 
@@ -120,46 +122,37 @@ function Navbar() {
     };
     window.addEventListener("resize", onResize);
 
+    const revealHeader = (duration: number) => {
+      if (isHidden) isHidden = false;
+      gsap.to(headerEl, { y: 0, duration, ease: "power2.out", overwrite: "auto" });
+    };
+
+    const concealHeader = () => {
+      if (isHidden) return;
+      isHidden = true;
+      gsap.to(headerEl, {
+        y: -headerHeight,
+        duration: 0.45,
+        ease: "power2.out",
+        overwrite: "auto",
+      });
+    };
+
     const st = ScrollTrigger.create({
       start: "top top",
       end: "max",
       onUpdate: (self) => {
         const scrolled = self.scroll();
-        // Keep visible when menu is open
-        if (isMenuOpen) {
-          if (isHidden) {
-            isHidden = false;
-          }
-          gsap.to(headerEl, { y: 0, duration: 0.4, ease: "power2.out", overwrite: "auto" });
+        if (isMenuOpen || scrolled <= 0) {
+          revealHeader(0.4);
           return;
         }
-
-        // Always show at the very top
-        if (scrolled <= 0) {
-          if (isHidden) {
-            isHidden = false;
-          }
-          gsap.to(headerEl, { y: 0, duration: 0.4, ease: "power2.out", overwrite: "auto" });
-          return;
-        }
-
         if (self.direction === 1) {
-          // Scrolling down → hide
-          if (!isHidden) {
-            isHidden = true;
-            gsap.to(headerEl, {
-              y: -headerHeight,
-              duration: 0.45,
-              ease: "power2.out",
-              overwrite: "auto",
-            });
-          }
-        } else if (self.direction === -1) {
-          // Scrolling up → show
-          if (isHidden) {
-            isHidden = false;
-            gsap.to(headerEl, { y: 0, duration: 0.45, ease: "power2.out", overwrite: "auto" });
-          }
+          concealHeader();
+          return;
+        }
+        if (self.direction === -1 && isHidden) {
+          revealHeader(0.45);
         }
       },
     });
@@ -169,7 +162,7 @@ function Navbar() {
       window.removeEventListener("resize", onResize);
       gsap.set(headerEl, { y: 0 });
     };
-  }, []);
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -184,13 +177,12 @@ function Navbar() {
       <header
         ref={navRef}
         className="bg-background fixed inset-x-0 top-2 z-40 mx-auto w-full max-w-6xl rounded-lg px-5"
-        role="banner"
         aria-label="Main navigation"
       >
         <div className="container mx-auto">
           <nav
+            id="main-navigation"
             className="flex items-center justify-between py-4"
-            role="navigation"
             aria-label="Primary navigation"
           >
             {/* Logo */}
@@ -198,15 +190,19 @@ function Navbar() {
               <Link
                 href="/"
                 className="focus:ring-ring flex items-center gap-2 rounded-md transition-opacity hover:opacity-80 focus:ring-2 focus:ring-offset-2 focus:outline-none"
-                aria-label="Consulting Studio - Return to homepage"
+                aria-label="Ionio - Return to homepage"
                 aria-describedby="logo-description"
               >
-                <span className="rounded-md bg-slate-900 px-2 py-1 text-xs font-semibold tracking-wide text-white">
-                  Studio
-                </span>
-                <span className="text-sm font-semibold text-slate-900">Your Name Consulting</span>
+                <img
+                  src="https://cdn.prod.website-files.com/62528d398a42424ab6390ee1/62528d398a42424d6e390f57_horizontal-logo-transperant.png"
+                  alt="Ionio Logo"
+                  className="h-8 w-auto"
+                  width="120"
+                  height="32"
+                  aria-hidden="true"
+                />
                 <span id="logo-description" className="sr-only">
-                  Personal consulting studio for Power Platform and Copilot engagements
+                  Ionio - Leading digital solutions provider
                 </span>
               </Link>
             </div>
@@ -221,7 +217,7 @@ function Navbar() {
                   pathname === link.href || (link.href.startsWith("/#") && pathname === "/");
 
                 return (
-                  <li key={link.name} role="none">
+                  <li key={link.name}>
                     <Link
                       href={link.href}
                       className={`text-text-heading hover:text-foreground focus:ring-ring rounded-md px-2 py-1 !text-sm font-medium transition-colors focus:ring-0 focus:outline-none ${
@@ -245,11 +241,11 @@ function Navbar() {
             <div className="flex items-center gap-3">
               {/* GitHub Icon */}
               <Link
-                href="https://github.com"
+                href="https://github.com/pinak3748"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="focus:ring-ring flex items-center justify-center rounded-md p-2 transition-colors hover:bg-accent"
-                aria-label="Visit GitHub profile"
+                aria-label="Visit our GitHub repository"
               >
                 <Github className="h-5 w-5 text-primary" />
               </Link>
@@ -261,7 +257,7 @@ function Navbar() {
                 asChild
               >
                 <a href={contactLinks.bookingUrl} target="_blank" rel="noopener noreferrer">
-                  Book a discovery call
+                  Work with us
                 </a>
               </Button>
             </div>
@@ -269,6 +265,7 @@ function Navbar() {
             {/* Mobile Menu Button */}
             <div className="lg:hidden">
               <button
+                type="button"
                 ref={buttonRef}
                 onClick={toggleMenu}
                 className="relative inline-flex h-10 w-10 items-center justify-center rounded-md outline-none focus:ring-0 focus:outline-none"
@@ -300,7 +297,6 @@ function Navbar() {
               className="lg:hidden"
               ref={menuRef}
               id="mobile-menu"
-              role="dialog"
               aria-modal="true"
               aria-label="Mobile navigation menu"
             >
@@ -312,7 +308,7 @@ function Navbar() {
                         pathname === link.href || (link.href.startsWith("/#") && pathname === "/");
 
                       return (
-                        <li key={link.name} role="none">
+                        <li key={link.name}>
                           <Link
                             href={link.href}
                             className={`hover:bg-accent hover:text-accent-foreground block rounded-md px-3 py-2 text-base font-medium transition-colors focus:outline-none ${
@@ -338,17 +334,17 @@ function Navbar() {
                   <div className="border-t pt-4 space-y-3">
                     {/* GitHub Link */}
                     <Link
-                      href="https://github.com"
+                      href="https://github.com/ionio"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none"
-                      aria-label="Visit GitHub profile"
+                      aria-label="Visit our GitHub repository"
                       onClick={closeMenu}
                     >
                       <Github className="h-5 w-5 text-primary" />
                       GitHub
                     </Link>
-                    
+
                     <Button
                       className="w-full"
                       aria-label="Contact us to start working together"
@@ -356,7 +352,7 @@ function Navbar() {
                       asChild
                     >
                       <a href={contactLinks.bookingUrl} target="_blank" rel="noopener noreferrer">
-                        Book a discovery call
+                        Work with us
                       </a>
                     </Button>
                   </div>
