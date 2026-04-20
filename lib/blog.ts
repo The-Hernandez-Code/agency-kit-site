@@ -13,6 +13,13 @@ type Metadata = {
   publishedAt: string;
   summary: string;
   image?: string;
+  tag?: string[];
+};
+
+export type BlogPost = {
+  metadata: Metadata;
+  slug: string;
+  source: string;
 };
 
 function getMDXFiles(dir: string) {
@@ -45,7 +52,7 @@ export async function getPost(slug: string) {
   const content = await markdownToHTML(rawContent);
   return {
     source: content,
-    metadata,
+    metadata: metadata as Metadata,
     slug,
   };
 }

@@ -1,224 +1,126 @@
-"use client";
+import { SectionHeading } from "@/components/custom/SectionHeading";
+import { contactLinks } from "@/lib/contact";
 
-import "@/lib/GSAPAnimations";
-import { pageMetadata } from "@/lib/metadata";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import { useRef } from "react";
+const engagementTracks = [
+  {
+    title: "Power Platform Build Sprint",
+    summary:
+      "For teams that need production-ready apps and automations quickly, with clear governance and ownership.",
+    bullets: [
+      "Power Apps + Power Automate implementation",
+      "Dataverse/SharePoint model design",
+      "Admin runbooks and handoff",
+    ],
+  },
+  {
+    title: "M365 Copilot Adoption Sprint",
+    summary:
+      "For organizations that have licenses but need role-specific use cases, measurable adoption, and safe rollout patterns.",
+    bullets: [
+      "Prompt playbooks by function",
+      "Enablement sessions for business teams",
+      "Adoption metrics and optimization loop",
+    ],
+  },
+  {
+    title: "Automation Opportunity Program",
+    summary:
+      "For leaders who want a practical automation roadmap before committing to larger implementation work.",
+    bullets: [
+      "Workflow interviews and process mapping",
+      "Impact/effort prioritization model",
+      "30/60/90 day execution plan",
+    ],
+  },
+];
 
-gsap.registerPlugin(ScrollTrigger);
+const principles = [
+  "Business-first outcomes over platform novelty",
+  "Governance and maintainability from day one",
+  "Short feedback loops with operational stakeholders",
+  "Clear ownership after handoff",
+];
 
-const AboutPage = () => {
-  const heroContentRef = useRef<HTMLDivElement>(null);
-  const workplaceContentRef = useRef<HTMLDivElement>(null);
-  const statsSectionRef = useRef<HTMLDivElement>(null);
-  const statsGridRef = useRef<HTMLDivElement>(null);
-  const imageGroupRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useGSAP(() => {
-    // Animate hero content
-    if (heroContentRef.current) {
-      gsap.effects.fadeUpOnScroll(heroContentRef.current, {
-        duration: 0.8,
-        yOffset: 30,
-        start: "top 85%",
-      });
-    }
-
-    // Animate workplace content
-    if (workplaceContentRef.current) {
-      gsap.effects.fadeUpOnScroll(workplaceContentRef.current, {
-        duration: 0.8,
-        yOffset: 30,
-        start: "top 85%",
-      });
-    }
-
-    // Animate stats section
-    if (statsSectionRef.current) {
-      gsap.effects.fadeUpOnScroll(statsSectionRef.current, {
-        duration: 0.8,
-        yOffset: 30,
-        start: "top 85%",
-      });
-    }
-
-    // Animate statistics grid with stagger
-    if (statsGridRef.current) {
-      gsap.effects.staggerFadeUpOnScroll(statsGridRef.current, {
-        duration: 0.6,
-        yOffset: 20,
-        stagger: 0.1,
-        start: "top 85%",
-      });
-    }
-
-    // Animate images with slight delay
-    imageGroupRefs.current.forEach((ref) => {
-      if (ref) {
-        gsap.effects.fadeUpOnScroll(ref, {
-          duration: 0.7,
-          yOffset: 25,
-          start: "top 80%",
-        });
-      }
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
+export default function AboutPage() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(pageMetadata.about.structuredData),
-        }}
-      />
-      
-      <main id="main-content" role="main">
-        <section className="py-32 mx-auto max-w-6xl px-5" aria-labelledby="about-heading">
-          <div className="container">
-            <div className="flex flex-col items-center justify-start gap-6 lg:flex-row">
-              <div className="flex w-full flex-col items-start justify-start gap-24 lg:w-1/2">
-                <header ref={heroContentRef} className="pr-6">
-                  <h1 id="about-heading" className="mb-6 text-4xl font-bold md:text-5xl lg:mb-10 lg:text-6xl">
-                    Our Story
-                  </h1>
-                  <p className="mb-9 text-lg font-medium lg:text-xl">
-                    We are driven by people and powered by AI innovation
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    At Ionio, we believe great technology starts with great people.
-                    Our team brings together curious minds, builders, and
-                    problem-solvers who thrive on turning complex ideas into
-                    impactful AI solutions. Collaboration, creativity, and ownership
-                    are at the heart of our culture — we work closely with our
-                    clients and each other to deliver results that feel both
-                    innovative and practical.
-                  </p>
-                </header>
-                <figure ref={(el) => { imageGroupRefs.current[0] = el as HTMLDivElement; }} className="flex flex-col items-center justify-center gap-6 md:flex-row" role="group" aria-label="Company team and workplace images">
-                  <img
-                    src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755799085/ssimage_bxr8i6.png"
-                    alt="Ionio team members collaborating on AI projects in modern office environment"
-                    className="aspect-[0.7] w-full rounded-lg object-cover md:w-1/2"
-                    loading="eager"
-                    decoding="sync"
-                    width="400"
-                    height="571"
-                  />
-                  <div className="flex w-full flex-col items-center justify-center gap-6 md:w-1/2">
-                    <img
-                      src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755804235/aaaimage_zbypst.png"
-                      alt="AI technology and machine learning workspace at Ionio"
-                      className="aspect-[1.1] rounded-lg object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      width="300"
-                      height="273"
-                    />
-                    <img
-                      src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755804376/fasimage_skodum.png"
-                      alt="Ionio team working on innovative AI solutions and technology development"
-                      className="aspect-[0.7] rounded-lg object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      width="300"
-                      height="429"
-                    />
-                  </div>
-                </figure>
-          </div>
-              <div className="flex w-full flex-col items-center justify-center gap-12 pt-12 lg:w-1/2 lg:pt-48">
-                <figure ref={(el) => { imageGroupRefs.current[1] = el as HTMLDivElement; }} className="flex flex-col items-center justify-center gap-6 md:flex-row" role="group" aria-label="Additional workplace and team collaboration images">
-                  <img
-                    src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755799085/ssimage_bxr8i6.png"
-                    alt="Ionio team members in collaborative workspace discussing AI innovation projects"
-                    className="aspect-[0.9] w-full rounded-lg object-cover md:w-1/2"
-                    loading="lazy"
-                    decoding="async"
-                    width="400"
-                    height="444"
-                  />
-                  <div className="flex w-full flex-col items-center justify-center gap-6 md:w-1/2">
-                    <img
-                      src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755804235/aaaimage_zbypst.png"
-                      alt="Modern AI development lab with cutting-edge technology at Ionio"
-                      className="aspect-[0.8] rounded-lg object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      width="300"
-                      height="375"
-                    />
-                    <img
-                      src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755804376/fasimage_skodum.png"
-                      alt="Ionio team brainstorming innovative AI solutions in creative workspace"
-                      className="aspect-[0.9] rounded-lg object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      width="300"
-                      height="333"
-                    />
-                  </div>
-                </figure>
-                <article ref={workplaceContentRef} className="px-8">
-                  <h2 className="mb-8 text-2xl font-semibold lg:mb-6">
-                    Our Workplace
-                  </h2>
-                  <p className="mb-9 text-lg font-medium lg:text-xl">
-                    Our culture is built on excellence, trust, and speed
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    At Ionio, we foster an environment where innovation thrives through 
-                    collaboration and continuous learning. Our workplace culture emphasizes 
-                    open communication, creative problem-solving, and the freedom to explore 
-                    cutting-edge AI technologies. We believe that the best solutions emerge 
-                    when diverse minds come together with a shared passion for pushing the 
-                    boundaries of what's possible in artificial intelligence.
-                  </p>
-                </article>
-              </div>
+    <main id="main-content" role="main" className="mx-auto max-w-6xl px-5 pb-16 pt-[116px] md:pb-20 md:pt-[132px]">
+      <section aria-labelledby="about-heading">
+        <SectionHeading
+          badge="Delivery model"
+          heading="A consulting partner for practical Power Platform + Copilot execution"
+          description="I help operations and IT leaders turn manual work into governed automation systems that teams actually use."
+          size="lg"
+          align="left"
+          as="h1"
+          id="about-heading"
+          className="space-y-5"
+          headingClassName="md:w-full"
+          showDescriptionToScreenReaders
+        />
+      </section>
+
+      <section className="mt-10" aria-labelledby="engagement-tracks-heading">
+        <h2 id="engagement-tracks-heading" className="text-2xl font-semibold text-slate-900">
+          Engagement tracks
+        </h2>
+        <div className="mt-4 grid gap-5 md:grid-cols-3">
+          {engagementTracks.map((track) => (
+            <article key={track.title} className="rounded-xl border border-slate-200 p-5">
+              <h3 className="text-lg font-semibold text-slate-900">{track.title}</h3>
+              <p className="mt-2 text-sm text-slate-600">{track.summary}</p>
+              <ul className="mt-4 space-y-2 text-sm text-slate-700">
+                {track.bullets.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span aria-hidden="true" className="mt-1 text-slate-400">
+                      •
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
+      </section>
 
-            <section ref={statsSectionRef} className="container flex flex-col gap-16 mt-24" aria-labelledby="stats-heading">
-              <header>
-                <h2 id="stats-heading" className="max-w-3xl text-4xl font-medium md:text-5xl">
-                  We excel in our field, but skill isn't everything we offer.
-                </h2>
-              </header>
-              <div ref={statsGridRef} className="grid grid-cols-2 gap-6 md:grid-cols-3" role="region" aria-label="Company statistics and achievements">
-                <div className="flex flex-col gap-6 border-b pb-8" role="article" aria-labelledby="stat-1">
-                  <p id="stat-1" className="text-4xl font-medium md:text-5xl" aria-label="21 million">21M</p>
-                  <p className="text-muted-foreground">Global Reach of Users</p>
-                </div>
-                <div className="flex flex-col gap-6 border-b pb-8" role="article" aria-labelledby="stat-2">
-                  <p id="stat-2" className="text-4xl font-medium md:text-5xl" aria-label="8 plus years">8+</p>
-                  <p className="text-muted-foreground">Years of Expertise</p>
-                </div>
-                <div className="flex flex-col gap-6 border-b pb-8" role="article" aria-labelledby="stat-3">
-                  <p id="stat-3" className="text-4xl font-medium md:text-5xl" aria-label="54 projects">54</p>
-                  <p className="text-muted-foreground">Projects Completed</p>
-                </div>
-                <div className="flex flex-col gap-6 border-b pb-8" role="article" aria-labelledby="stat-4">
-                  <p id="stat-4" className="text-4xl font-medium md:text-5xl" aria-label="113 thousand plus">113k+</p>
-                  <p className="text-muted-foreground">Monthly Active Users</p>
-                </div>
-                <div className="flex flex-col gap-6 border-b pb-8" role="article" aria-labelledby="stat-5">
-                  <p id="stat-5" className="text-4xl font-medium md:text-5xl" aria-label="461 thousand">461k</p>
-                  <p className="text-muted-foreground">Registered Accounts</p>
-                </div>
-              </div>
-            </section>
-          </div>
-        </section>
-      </main>
-    </>
+      <section className="mt-10" aria-labelledby="principles-heading">
+        <h2 id="principles-heading" className="text-2xl font-semibold text-slate-900">
+          Working principles
+        </h2>
+        <ul className="mt-4 grid gap-3 text-sm text-slate-700 md:grid-cols-2">
+          {principles.map((principle) => (
+            <li key={principle} className="rounded-lg border border-slate-200 p-4">
+              {principle}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-10 rounded-xl border border-slate-200 p-6" aria-labelledby="next-step-heading">
+        <h2 id="next-step-heading" className="text-xl font-semibold text-slate-900">
+          Next step
+        </h2>
+        <p className="mt-2 text-sm text-slate-600">
+          Bring one process that is slowing down your team. We’ll pressure-test feasibility,
+          governance, and expected impact together.
+        </p>
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+          <a
+            href={contactLinks.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+          >
+            Book discovery call
+          </a>
+          <a
+            href={contactLinks.mailtoHref}
+            className="inline-flex items-center justify-center rounded-md border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >
+            Email your use case
+          </a>
+        </div>
+      </section>
+    </main>
   );
-};
-
-export default AboutPage;
+}
