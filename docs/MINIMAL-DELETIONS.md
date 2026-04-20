@@ -8,9 +8,9 @@ This list is intentionally conservative: remove only what is now clearly redunda
    - No longer imported by `app/page.tsx`.
    - Large legacy content and animation logic.
 
-2. `data/caseStudies.ts` (optional in same PR if you do not plan to reuse)
-   - Home no longer depends on this dataset.
-   - Keep only if you plan to rebuild case studies later.
+2. `data/caseStudies.ts` (defer while hero visuals depend on it)
+   - Home hero currently reuses this dataset for delivery snapshot image/logo visuals.
+   - Do not delete until those visuals are migrated to a dedicated consulting dataset.
 
 3. Legacy carousel/image helpers only if `data/caseStudies.ts` is removed:
    - `components/custom/ImageCarousel.tsx`

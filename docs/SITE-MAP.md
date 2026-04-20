@@ -7,7 +7,7 @@ This document maps the active routes and their primary components so PR reviewer
 ### `/` (home)
 - **Entry**: `app/page.tsx`
 - **Sections in order**:
-  - `components/landing/HeroSection.tsx`
+  - `components/landing/HeroSection.tsx` (includes CTA, logo strip, and delivery snapshot cards)
   - `components/landing/CaseStudiesSection.tsx` (now "Services")
   - `components/landing/ProcessSection.tsx`
   - `components/landing/FAQSection.tsx`
@@ -37,7 +37,7 @@ This document maps the active routes and their primary components so PR reviewer
 
 - `lib/contact.ts` - env-driven contact links used across hero/navbar/footer/contact section.
 - `lib/metadata.ts` - site and route metadata config (currently brand text is still from original template and should be updated in a follow-up PR).
-- `data/caseStudies.ts` - legacy dataset from original template (no longer used by homepage after rewrite).
+- `data/caseStudies.ts` - currently used by the homepage hero for logo and delivery snapshot visuals.
 
 ## Key environment variables
 
