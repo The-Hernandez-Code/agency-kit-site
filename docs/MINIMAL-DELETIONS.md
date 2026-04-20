@@ -13,7 +13,13 @@ Deleted:
 
 These files were no longer referenced after homepage and blog-list rewrites.
 
-## Phase 2 (next cleanup PR)
+## Phase 2 (completed in cleanup)
+
+1. Simplified `/about` to consulting-focused messaging.
+2. Simplified `/blog` list page to read from `content/*.mdx`.
+3. Removed duplicated static in-file blog listing data.
+
+## Phase 3 (next cleanup PR)
 
 1. Replace remaining template-era branding strings in metadata and social links:
    - `lib/metadata.ts`
