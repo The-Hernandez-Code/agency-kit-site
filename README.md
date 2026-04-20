@@ -68,8 +68,8 @@ A beautiful, fully responsive, and SEO-optimized website template built with **N
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/pinak3748/modern-agency-template.git
-   cd modern-agency-template
+   git clone <your-repository-url>
+   cd <your-repository-directory>
    ```
 
 2. **Install dependencies**
@@ -191,9 +191,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 **Email**: [pinakfaldu3748@gmail.com](mailto:pinakfaldu3748@gmail.com)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/pinak3748/modern-agency-template/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/pinak3748/modern-agency-template/discussions)
+- 📧 **Email**: Use the contact options configured in your deployment (see `lib/contact.ts` and `NEXT_PUBLIC_*` variables in your environment).
+- 🐛 **Issues**: Open an issue in your fork or upstream repository on GitHub.
+- 💬 **Discussions**: Use GitHub Discussions on the repository where you host this project.
 
 ## 🌟 Show Your Support
 
@@ -201,6 +201,6 @@ If you found this template helpful, please give it a ⭐ on GitHub!
 
 ---
 
-**Built with ❤️ by [Pinak Faldu](https://github.com/pinak3748)**
+**Built with ❤️**
 
 *This template is designed to be a starting point for your next project. Feel free to customize it to match your brand and requirements!*

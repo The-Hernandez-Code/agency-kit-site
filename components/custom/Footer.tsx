@@ -18,7 +18,7 @@ function Footer() {
   const socialLinks = [
     { name: "X", href: "https://x.com/Pinak72813632" },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/pinakfaldu/" },
-    { name: "Github", href: "https://github.com/pinak3748" },
+    { name: "Github", href: "https://github.com/ionio" },
   ];
 
   return (

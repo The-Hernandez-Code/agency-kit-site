@@ -241,7 +241,7 @@ function Navbar() {
             <div className="flex items-center gap-3">
               {/* GitHub Icon */}
               <Link
-                href="https://github.com/pinak3748"
+                href="https://github.com/ionio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="focus:ring-ring flex items-center justify-center rounded-md p-2 transition-colors hover:bg-accent"
