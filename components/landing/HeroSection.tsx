@@ -20,6 +20,33 @@ import { ScrollTrigger, SplitText } from "gsap/all";
 import { Sparkles } from "lucide-react";
 import { useRef } from "react";
 
+const trustedPartnerLogos = [
+  {
+    name: "Standard Draft",
+    logoSrc:
+      "https://cdn.prod.website-files.com/62528d398a42424ab6390ee1/665dcd0c7dc5304519a9a4e0_Standard%20Draft.png",
+  },
+  {
+    name: "Dex",
+    logoSrc:
+      "https://cdn.prod.website-files.com/62528d398a42424ab6390ee1/6659ae5c3907ce45e187ce85_dex-logo.png",
+  },
+  {
+    name: "Veerview",
+    logoSrc: "https://veerview.ai/assets/images/image05.jpg?v=505d141a",
+  },
+  {
+    name: "SupplierHQ",
+    logoSrc:
+      "https://cdn.prod.website-files.com/62528d398a42424ab6390ee1/665da4b5d559ba95bc6af154_supplierhq.svg",
+  },
+  {
+    name: "Wordout",
+    logoSrc:
+      "https://cdn.prod.website-files.com/62528d398a42424ab6390ee1/667404a553e0149bc2d16e69_wordout.png",
+  },
+];
+
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,15 +142,15 @@ function HeroSection() {
           <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-12 bg-gradient-to-l from-gray-50 via-gray-50/90 to-transparent md:w-48" />
 
           <Marquee pauseOnHover className="mt-14">
-            {caseStudies.map((caseStudy, index) => (
+            {trustedPartnerLogos.map((partner, index) => (
               <div
-                key={`${caseStudy.name}-${index}`}
+                key={`${partner.name}-${index}`}
                 className="group mx-1 flex-shrink-0 cursor-pointer md:mx-4"
               >
                 <div className="relative flex h-16 items-center justify-center p-4 transition-all duration-300 ease-in-out">
                   <img
-                    src={caseStudy.logo_src}
-                    alt={`${caseStudy.project_title} logo`}
+                    src={partner.logoSrc}
+                    alt={`${partner.name} logo`}
                     className={
                       "max-h-full max-w-full object-contain opacity-80 grayscale filter transition-all duration-300 ease-in-out hover:opacity-100 hover:brightness-110 hover:grayscale-0"
                     }
