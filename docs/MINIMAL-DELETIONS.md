@@ -19,7 +19,7 @@ This list is intentionally conservative: remove only what is now clearly redunda
 ## Phase 2 (next cleanup PR)
 
 1. Simplify `/about` page to match new consulting positioning:
-   - `app/about/page.tsx` currently contains old "Ionio" copy and remote placeholder imagery.
+   - `app/about/page.tsx` currently contains old placeholder copy and remote imagery.
 
 2. Simplify `/blog` listing:
    - Migrate `app/blog/page.tsx` to read from `content/*.mdx` (same source as `/blog/[slug]`).

@@ -103,7 +103,7 @@ function HeroSection() {
             variant={"outline"}
             asChild
           >
-            <a href={contactLinks.mailtoHref}>View Case Studios</a>
+            <a href={contactLinks.mailtoHref}>View Case Studies</a>
           </Button>
         </div>
 
@@ -180,7 +180,7 @@ function HeroSection() {
                   <div className="space-y-1">
                     <p className="text-heading text-md leading-snug">{caseStudy.project_title}</p>
                     <div className="flex items-center gap-3">
-                      <p className="text-heading text-sm font-medium">Standard Draft</p>
+                      <p className="text-heading text-sm font-medium">{caseStudy.name}</p>
                       <p className="text-heading text-sm">[AI DOCUMENT]</p>
                     </div>
                   </div>

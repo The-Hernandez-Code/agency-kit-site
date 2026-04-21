@@ -16,9 +16,9 @@ function Footer() {
   ];
 
   const socialLinks = [
-    { name: "X", href: "https://x.com/Pinak72813632" },
-    { name: "LinkedIn", href: "https://www.linkedin.com/in/pinakfaldu/" },
-    { name: "Github", href: "https://github.com/pinak3748" },
+    { name: "X", href: "https://x.com/centurionstudio" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/centurionstudio/" },
+    { name: "Github", href: "https://github.com/centurionstudio" },
   ];
 
   return (
@@ -41,11 +41,15 @@ function Footer() {
           <Marquee className="[--duration:5s]">
             {(
               [
-                { id: "i1", char: "I" },
-                { id: "o", char: "O" },
+                { id: "c", char: "C" },
+                { id: "e", char: "E" },
                 { id: "n", char: "N" },
-                { id: "i2", char: "I" },
-                { id: "o2", char: "O" },
+                { id: "t", char: "T" },
+                { id: "u", char: "U" },
+                { id: "r", char: "R" },
+                { id: "i", char: "I" },
+                { id: "o", char: "O" },
+                { id: "n2", char: "N" },
               ] as const
             ).map(({ id, char }) => (
               <span
@@ -74,13 +78,13 @@ function Footer() {
                   itemType="https://schema.org/Organization"
                 >
                   <p className="text-2xl font-bold" itemProp="name">
-                    Ionio LLC
+                    Centurion Studio
                   </p>
-                  <p className="text-sm">Copyrights © All Rights Reserved by Ionio.io</p>
+                  <p className="text-sm">Copyright © All Rights Reserved by Centurion Studio</p>
                   <p className="text-sm">
                     <span className="sr-only">Phone:</span>
-                    <a href="tel:+19103150746" itemProp="telephone" className="hover:underline">
-                      +1-910-315-0746
+                    <a href="tel:+15550100200" itemProp="telephone" className="hover:underline">
+                      +1 (555) 010-0200
                     </a>
                   </p>
                   <p
@@ -89,12 +93,12 @@ function Footer() {
                     itemScope
                     itemType="https://schema.org/PostalAddress"
                   >
-                    <span itemProp="streetAddress">2055 Limestone Rd STE 200C IN Wilmington</span>
+                    <span itemProp="streetAddress">1200 Innovation Drive, Suite 210</span>
                   </p>
                   <p className="text-sm">
-                    <span itemProp="addressLocality">Wilmington</span>,{" "}
-                    <span itemProp="addressRegion">DE</span>{" "}
-                    <span itemProp="postalCode">19808</span>
+                    <span itemProp="addressLocality">Austin</span>,{" "}
+                    <span itemProp="addressRegion">TX</span>{" "}
+                    <span itemProp="postalCode">78701</span>
                   </p>
                 </div>
 
