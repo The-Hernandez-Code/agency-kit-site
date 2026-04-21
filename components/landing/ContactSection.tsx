@@ -151,7 +151,7 @@ function ContactUs() {
           ref={headingRef}
           badge="Contact Us"
           heading="Get in Touch"
-          description="Contact Ionio to discuss your AI transformation needs."
+          description="Contact Centurion to discuss your AI transformation needs."
           size="md"
           align="center"
           as="h2"
@@ -167,7 +167,7 @@ function ContactUs() {
                 Contact us form
               </h3>
               <p id="contact-form-description" className="sr-only">
-                Use this form to contact Ionio. All fields are required.
+                Use this form to contact Centurion. All fields are required.
               </p>
               <form
                 className="space-y-4 sm:space-y-6"

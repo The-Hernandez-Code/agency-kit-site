@@ -93,7 +93,7 @@ const AboutPage = () => {
                     We are driven by people and powered by AI innovation
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    At Ionio, we believe great technology starts with great people.
+                    At Centurion, we believe great technology starts with great people.
                     Our team brings together curious minds, builders, and
                     problem-solvers who thrive on turning complex ideas into
                     impactful AI solutions. Collaboration, creativity, and ownership
@@ -105,7 +105,7 @@ const AboutPage = () => {
                 <figure ref={(el) => { imageGroupRefs.current[0] = el as HTMLDivElement; }} className="flex flex-col items-center justify-center gap-6 md:flex-row" role="group" aria-label="Company team and workplace images">
                   <img
                     src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755799085/ssimage_bxr8i6.png"
-                    alt="Ionio team members collaborating on AI projects in modern office environment"
+                    alt="Centurion team members collaborating on AI projects in modern office environment"
                     className="aspect-[0.7] w-full rounded-lg object-cover md:w-1/2"
                     loading="eager"
                     decoding="sync"
@@ -115,7 +115,7 @@ const AboutPage = () => {
                   <div className="flex w-full flex-col items-center justify-center gap-6 md:w-1/2">
                     <img
                       src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755804235/aaaimage_zbypst.png"
-                      alt="AI technology and machine learning workspace at Ionio"
+                      alt="AI technology and machine learning workspace at Centurion"
                       className="aspect-[1.1] rounded-lg object-cover"
                       loading="lazy"
                       decoding="async"
@@ -124,7 +124,7 @@ const AboutPage = () => {
                     />
                     <img
                       src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755804376/fasimage_skodum.png"
-                      alt="Ionio team working on innovative AI solutions and technology development"
+                      alt="Centurion team working on innovative AI solutions and technology development"
                       className="aspect-[0.7] rounded-lg object-cover"
                       loading="lazy"
                       decoding="async"
@@ -138,7 +138,7 @@ const AboutPage = () => {
                 <figure ref={(el) => { imageGroupRefs.current[1] = el as HTMLDivElement; }} className="flex flex-col items-center justify-center gap-6 md:flex-row" role="group" aria-label="Additional workplace and team collaboration images">
                   <img
                     src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755799085/ssimage_bxr8i6.png"
-                    alt="Ionio team members in collaborative workspace discussing AI innovation projects"
+                    alt="Centurion team members in collaborative workspace discussing AI innovation projects"
                     className="aspect-[0.9] w-full rounded-lg object-cover md:w-1/2"
                     loading="lazy"
                     decoding="async"
@@ -148,7 +148,7 @@ const AboutPage = () => {
                   <div className="flex w-full flex-col items-center justify-center gap-6 md:w-1/2">
                     <img
                       src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755804235/aaaimage_zbypst.png"
-                      alt="Modern AI development lab with cutting-edge technology at Ionio"
+                      alt="Modern AI development lab with cutting-edge technology at Centurion"
                       className="aspect-[0.8] rounded-lg object-cover"
                       loading="lazy"
                       decoding="async"
@@ -157,7 +157,7 @@ const AboutPage = () => {
                     />
                     <img
                       src="https://res.cloudinary.com/dieth2xb3/image/upload/v1755804376/fasimage_skodum.png"
-                      alt="Ionio team brainstorming innovative AI solutions in creative workspace"
+                      alt="Centurion team brainstorming innovative AI solutions in creative workspace"
                       className="aspect-[0.9] rounded-lg object-cover"
                       loading="lazy"
                       decoding="async"
@@ -174,7 +174,7 @@ const AboutPage = () => {
                     Our culture is built on excellence, trust, and speed
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    At Ionio, we foster an environment where innovation thrives through 
+                    At Centurion, we foster an environment where innovation thrives through 
                     collaboration and continuous learning. Our workplace culture emphasizes 
                     open communication, creative problem-solving, and the freedom to explore 
                     cutting-edge AI technologies. We believe that the best solutions emerge 

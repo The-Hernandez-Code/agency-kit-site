@@ -339,10 +339,10 @@ The requested blog post could not be found. Please check the URL and try again.
         day: "numeric",
       }),
       author: {
-        name: "Ionio Team",
+        name: "Centurion Editorial Team",
         role: "Content Team",
         avatar: "/api/placeholder/48/48",
-        bio: "The Ionio team creates content to help businesses understand and implement AI solutions.",
+        bio: "The Centurion team creates content to help businesses deliver practical automation and AI outcomes.",
       },
       keyTakeaways: ["The requested blog post could not be found"],
       breadcrumbs: [

@@ -37,7 +37,7 @@ This document maps the active routes and their primary components so PR reviewer
 ## Shared data/config
 
 - `lib/contact.ts` - env-driven contact links used across hero/navbar/footer/contact section.
-- `lib/metadata.ts` - site and route metadata config (currently brand text is still from original template and should be updated in a follow-up PR).
+- `lib/metadata.ts` - site and route metadata config for the Centurion brand.
 - `data/caseStudies.ts` - case study and testimonial content used by hero marquee, case studies, testimonials, and contact panel.
 
 ## Key environment variables
