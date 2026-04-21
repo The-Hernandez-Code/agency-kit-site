@@ -18,7 +18,6 @@ function Footer() {
   const socialLinks = [
     { name: "X", href: "https://x.com/centurionstudio" },
     { name: "LinkedIn", href: "https://www.linkedin.com/company/centurionstudio/" },
-    { name: "Github", href: "https://github.com/centurionstudio" },
   ];
 
   return (
