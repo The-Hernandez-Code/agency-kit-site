@@ -191,7 +191,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 **Email**: Use the contact options configured in your deployment (see `lib/contact.ts` and `NEXT_PUBLIC_*` variables in your environment).
+- 📧 **Email**: [hello@centurionstudio.example](mailto:hello@centurionstudio.example) — or use the contact options in your deployment (see `lib/contact.ts` and `NEXT_PUBLIC_*` environment variables).
 - 🐛 **Issues**: Track bugs and requests in whatever issue tracker you use for the project.
 - 💬 **Discussions**: Use your team’s preferred channel for design and roadmap conversations.
 
@@ -201,6 +201,6 @@ If you found this template helpful, share it with someone who might benefit.
 
 ---
 
-**Built with ❤️**
+**Built with ❤️ by Centurion Studio**
 
 *This template is designed to be a starting point for your next project. Feel free to customize it to match your brand and requirements!*

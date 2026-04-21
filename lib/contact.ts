@@ -1,5 +1,5 @@
-const FALLBACK_CALCOM_URL = "https://cal.com";
-const FALLBACK_CONTACT_EMAIL = "hello@example.com";
+const FALLBACK_CALCOM_URL = "https://cal.com/centurion-studio";
+const FALLBACK_CONTACT_EMAIL = "hello@centurionstudio.example";
 const FALLBACK_EMAIL_SUBJECT = "Discovery call request";
 const FALLBACK_EMAIL_BODY =
   "Hi,\n\nI'd like to discuss a Power Platform + M365 Copilot engagement.\n\nContext:\nTimeline:\nTeam size:\n\nThanks!";

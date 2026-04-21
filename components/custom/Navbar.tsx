@@ -189,19 +189,19 @@ function Navbar() {
               <Link
                 href="/"
                 className="focus:ring-ring flex items-center gap-2 rounded-md transition-opacity hover:opacity-80 focus:ring-2 focus:ring-offset-2 focus:outline-none"
-                aria-label="Ionio - Return to homepage"
+                aria-label="Centurion - Return to homepage"
                 aria-describedby="logo-description"
               >
                 <img
-                  src="https://cdn.prod.website-files.com/62528d398a42424ab6390ee1/62528d398a42424d6e390f57_horizontal-logo-transperant.png"
-                  alt="Ionio Logo"
+                  src="/centurion-logo.svg"
+                  alt="Centurion Logo"
                   className="h-8 w-auto"
-                  width="120"
+                  width="220"
                   height="32"
                   aria-hidden="true"
                 />
                 <span id="logo-description" className="sr-only">
-                  Ionio - Leading digital solutions provider
+                  Centurion - AI and automation consulting studio
                 </span>
               </Link>
             </div>
